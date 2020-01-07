@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% block title %}
+	<title>TownShip </title>
+{% endblock title %}
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/font-awesome.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/font-awesome.min.css')}}">
+{% endblock head %}
+
+
+{% block body %}
+<div class="container">
+<div class="container-fluid">
+  <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="">TownShip  </a>
+    <ul class="navbar-nav">
+    <!--copy-->
+      <li class="nav-item"><a class="nav-link" href="/">Dashboord</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Student">Students</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Add_Students">Add Students</a></li>
+      
+
+    </ul>
+  </nav>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<!--adding form-->
+<div class="container-fluid">
+  <form action="/Add_Students" class="container" method="POST">
+  <div class="form-group">
+    <legend>Name</legend>
+
+    <input type="text" class="form-control sm input100" name="name" placeholder="Fullnames" required>
+  </div>
+  <div class="form-group">
+    <legend>Class</legend>
+
+    <input type="text" class="form-control sm input100" name="Class" placeholder="Class" required>
+  </div>
+  <div class="form-group">
+    <legend>Fee</legend>
+
+    
+    <input type="text" class="form-control sm input100" name="fee" placeholder="Fees" required>
+  </div>
+  <button class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<div class="container-fluid">
+  <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="">[-+-]TownShip  </a>
+    <ul class="navbar-nav">
+    <!--copy-->
+      <li class="nav-item"><a class="nav-link" href="/">Dashboord</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Student">Students</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Add_Students">Add Students</a></li>
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+  
+
+{% endblock body%}

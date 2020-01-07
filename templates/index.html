@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% block title %}
+	<title>TownShip </title>
+{% endblock title %}
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+{% endblock head %}
+
+
+{% block body %}
+<div class="container-fluid">
+  <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="">TownShip  </a>
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="/">Dashboord</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Student">Students</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Add_Students">Add Students</a></li>
+      
+
+    </ul>
+  </nav>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1>Hellow there</h1>
+    <p>Erp system for managing student info check out readme to help your understand</p>
+  </div>
+</div>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1>Hellow there</h1>
+    <pre>
+ <code class="language-json">
+ {
+ &quot;firstName&quot;: &quot;John&quot;,
+ &quot;lastName&quot;: &quot;Smith&quot;,
+ &quot;age&quot;: 25
+ }
+ </code>
+ </pre>
+  </div>
+</div>
+<div class="container-fluid">
+  <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="">TownShip  </a>
+    <ul class="navbar-nav">
+    <!--copy-->
+      <li class="nav-item"><a class="nav-link" href="/">Dashboord</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Student">Students</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Add_Students">Add Students</a></li>
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+
+
+  
+
+{% endblock body%}

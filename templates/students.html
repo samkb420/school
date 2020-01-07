@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% block title %}
+	<title>TownShip </title>
+{% endblock title %}
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/font-awesome.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/font-awesome.min.css')}}">
+{% endblock head %}
+
+
+{% block body %}
+<div class="container">
+<div class="container-fluid">
+  <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href=""><i class="fa fa-mortar-board"></i> TownShip  </a>
+    <ul class="navbar-nav">
+    <!--copy-->
+      <li class="nav-item"> <a class="nav-link" href="/"><i class="fa fa-dashboard "> </i>     Dashboord</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Student"><i class="fa fa-users"></i>   All Students</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Add_Students"><i class="fa fa-user-plus"></i>          Add Students</a></li>
+
+      
+
+    </ul>
+  </nav>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<!--breadcrumb-->
+<div class="container-fluid">
+  <ul class="breadcrumb">
+    <li class="breadcrub-item"><a class="link" href="#"><i class="fa fa-home"></i>  Home</a></li>
+    <li class="breadcrub-item"><a class="link" href="#"><i class="fa fa-calendar"></i> Year 2020 </a></li>
+    <li class="breadcrub-item"><a class="link" href="#"><i class="fa fa-calendar-check-o"></i>  Team 1</a></li>
+    <li class="breadcrub-item"><a class="link" href="#"><i class="fa fa-mortar-board"></i>  Class 1</a></li>
+    
+  </ul>
+</div>
+
+<!--table loop-->
+<div class="container-fluid">
+  <table class="table">
+    <thead class="thead-light">
+   
+      <tr>
+        <th>Names</th>
+        
+        <th>Fees</th>
+        <th>Status <i class="fa fa-exclamation"></i></th>
+        <th>Update <i class="fa fa-edit"></i></th>
+        <th >Delete <i class="fa fa-trash"></i></th>
+
+        
+      </tr>
+      
+    </thead>
+    <tbody>
+    <!--for loop -->
+     {% for student in students %}
+      <tr>
+        <td>{{student.id}}.{{student.name}}</td>
+        
+        <td>{{student.fee}}.00/=</td>
+        {% if student.fee >= 5000 %}
+        <td class="alert alert-info">Above 60 percent <i class="fa fa-check-square-o"></i></td>
+        {% else %}
+        <td class="alert alert-danger">Under 60 Percent <i class="fa fa-exclamation-triangle"></i></td>
+        {% endif %}
+        <td><a href="/update/{{student.id}}"><i class="fa fa-edit"></i>  Update</a></td>
+        <td><a href="/delete/{{student.id}}">Delete <i class="fa fa-trash"></i></a></td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container-fluid">
+  <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="">TownShip  </a>
+    <ul class="navbar-nav">
+    <!--copy-->
+      <li class="nav-item"><a class="nav-link" href="/">Dashboord</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Student">Students</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Add_Students">Add Students</a></li>
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+
+
+  
+
+{% endblock body%}

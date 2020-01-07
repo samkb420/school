@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% block title %}
+	<title>TownShip </title>
+{% endblock title %}
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/font-awesome.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/font-awesome.min.css')}}">
+{% endblock head %}
+
+
+{% block body %}
+<div class="container">
+<div class="container-fluid">
+  <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light">
+    <a class="navbar-brand" href=""><i class="fa fa-mortar-board"></i> TownShip  </a>
+    <ul class="navbar-nav">
+    <!--copy-->
+      <li class="nav-item"> <a class="nav-link" href="/"><i class="fa fa-dashboard "> </i>     Dashboord</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Student"><i class="fa fa-users"></i>   All Students</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Add_Students"><i class="fa fa-user-plus"></i>          Add Students</a></li>
+
+      
+    </ul>
+  </nav>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<!--adding form-->
+<div class="container-fluid">
+  <form action="/update/{{student.id}}" class="container" method="POST">
+  <div class="form-group">
+    <legend>Name</legend>
+
+    <input type="text" class="form-control sm" name="name" placeholder="Fullnames" value="{{student.name}}" required>
+  </div>
+  <div class="form-group">
+    <legend>Class</legend>
+
+    <input type="text" class="form-control sm" name="Class" placeholder="Class" value="{{student.Class}}" required>
+  </div>
+  <div class="form-group">
+    <legend>Fee</legend>
+
+    <input type="text" class="form-control sm" name="fee" placeholder="Fees" value="{{student.fee}}" required>
+  </div>
+  <button class="btn btn-primary">Update</button>
+  </form>
+</div>
+
+
+  
+
+{% endblock body%}
